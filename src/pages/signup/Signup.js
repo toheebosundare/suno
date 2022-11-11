@@ -16,8 +16,7 @@ export default function Signup() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    signup(email, password
-      , displayName, thumbnail)
+    signup(email, password, displayName, thumbnail)
   }
 
   const handleFileChange = (e) => {
