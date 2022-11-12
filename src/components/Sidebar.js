@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom"
+import { useLogout } from '../hooks/useLogout'
 
 // styles & images
 import "./Sidebar.css"
@@ -6,6 +7,8 @@ import DashboardIcon from '../assets/dashboard_icon.svg'
 import AddIcon from '../assets/add_icon.svg'
 
 export default function Sidebar() {
+  const { logout, isPending } = useLogout()
+
   return (
     <div className="sidebar">
       <div className="sidebar-content">
@@ -30,8 +33,9 @@ export default function Sidebar() {
             
           </ul>
         </nav>
-        <div className="logout-btn">
-          <p>Logout</p>
+        <div>
+          {!isPending && <button className="logout-btn" onClick={logout}>Logout</button>}
+          {isPending && <button className="logout-btn" disabled>Logging out...</button>}
         </div>
       </div>
     </div>

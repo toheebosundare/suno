@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { projectAuth } from '../firebase/config'
+import { projectAuth, projectFirestore } from '../firebase/config'
 import { useAuthContext } from './useAuthContext'
 
 export const useLogin = () => {
@@ -15,6 +15,15 @@ export const useLogin = () => {
     try {
       // login
       const res = await projectAuth.signInWithEmailAndPassword(email, password)
+      
+      if (!res) {
+        throw new Error('Could not complete login')
+      }
+
+      //  create a user document
+      await projectFirestore.collection('users').doc(res.user.uid).set({
+        online: true,
+      })
 
       // dispatch login action
       dispatch({ type: 'LOGIN', payload: res.user })
