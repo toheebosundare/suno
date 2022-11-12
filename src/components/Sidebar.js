@@ -27,8 +27,12 @@ export default function Sidebar() {
                 <span>New Project</span>
               </NavLink>
             </li>
+            
           </ul>
         </nav>
+        <div className="logout-btn">
+          <p>Logout</p>
+        </div>
       </div>
     </div>
   )
