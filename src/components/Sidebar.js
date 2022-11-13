@@ -34,8 +34,8 @@ export default function Sidebar() {
           </ul>
         </nav>
         <div>
-          {!isPending && <button className="logout-btn" onClick={logout}>Logout</button>}
-          {isPending && <button className="logout-btn" disabled>Logging out...</button>}
+          {!isPending && <p className="logout-btn" onClick={logout}>Logout</p>}
+          {isPending && <p className="logout-btn" disabled>Logging out...</p>}
         </div>
       </div>
     </div>

@@ -49,8 +49,9 @@
 }
 
 .logout-btn {
-  margin: 120px 90px 0px;
+  margin: 120px 75px 0px;
   text-align: center;
+  align-items: center;
   padding: 8px 12px;
   border-radius: 4px;
   color: #fff;
