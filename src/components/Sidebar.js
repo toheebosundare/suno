@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom"
 import { useLogout } from '../hooks/useLogout'
+import { useAuthContext } from '../hooks/useAuthContext'
 
 // styles & images
 import "./Sidebar.css"
@@ -8,6 +9,7 @@ import AddIcon from '../assets/add_icon.svg'
 
 export default function Sidebar() {
   const { logout, isPending } = useLogout()
+  const { user } = useAuthContext()
 
   return (
     <div className="sidebar">
@@ -34,8 +36,8 @@ export default function Sidebar() {
           </ul>
         </nav>
         <div>
-          {!isPending && <p className="logout-btn" onClick={logout}>Logout</p>}
-          {isPending && <p className="logout-btn" disabled>Logging out...</p>}
+          {user && !isPending && <p className="logout-btn" onClick={logout}>Logout</p>}
+          {user && isPending && <p className="logout-btn" disabled>Logging out...</p>}
         </div>
       </div>
     </div>

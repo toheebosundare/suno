@@ -1,10 +1,13 @@
 import { Link } from 'react-router-dom'
+import { useAuthContext } from '../hooks/useAuthContext'
 
 // styles & images
 import './Navbar.css'
 import Temple from '../assets/temple.svg'
 
 export default function Navbar() {
+  const { user } = useAuthContext()
+
   return (
     <nav className="navbar">
       <ul>
@@ -13,11 +16,8 @@ export default function Navbar() {
           <span>SUNO</span>
         </li>
 
-        <li><Link to="/login">Login</Link></li>
-        <li><Link to="/signup">Signup</Link></li>
-        <li>
-          <button className="btn">Logout</button>
-        </li>
+        {!user && <li><Link to="/login">Login</Link></li>}
+        {!user && <li><Link to="/signup">Signup</Link></li>}
       </ul>
     </nav>
   )
