@@ -9,7 +9,8 @@
 .project-summary {
   background-color: #fff;
   padding: 30px;
-  border-radius: 4px;
+  border-radius: 10px;
+  /* background-color: blanchedalmond; */
 }
 .project-summary .due-date {
   margin: 10px 0;
@@ -35,4 +36,13 @@
 }
 .project-summary + .btn {
   margin-top: 20px;
+}
+
+/* project comments */
+.project-comments label {
+  margin-bottom: 0px;
+}
+.project-comments textarea {
+  min-height: 40px;
+  font-size: 1.5em;
 }

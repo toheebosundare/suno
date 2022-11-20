@@ -1,6 +1,9 @@
+import { useAuthContext } from '../../hooks/useAuthContext'
+// images
 import Avatar from "../../components/Avatar"
 
 export default function ProjectSummary({ project }) {
+  const { user } = useAuthContext()
 
   return (
     <div>
@@ -12,7 +15,7 @@ export default function ProjectSummary({ project }) {
         <p className="details">
           {project.details}
         </p>
-        <h4>Project assigned to:</h4>
+        <h4>Project assigned to: {user.displayName}</h4>
         <div className="assigned-users">
           {project.assignedUsersList.map(user => (
             <div key={user.id}>
