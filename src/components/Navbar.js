@@ -3,7 +3,7 @@ import { useAuthContext } from '../hooks/useAuthContext'
 
 // styles & images
 import './Navbar.css'
-import Temple from '../assets/temple.svg'
+import Malu from '../assets/malu.svg'
 
 export default function Navbar() {
   const { user } = useAuthContext()
@@ -12,8 +12,8 @@ export default function Navbar() {
     <nav className="navbar">
       <ul>
         <li className="logo">
-          <img src={Temple} alt="dojo logo" />
-          <span>SUNO</span>
+          <img src={Malu} alt="dojo logo" />
+          <span>MALU</span>
         </li>
 
         {!user && <li><Link to="/login">Login</Link></li>}

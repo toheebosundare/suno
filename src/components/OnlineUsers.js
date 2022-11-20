@@ -4,6 +4,9 @@ import { useCollection } from '../hooks/useCollection'
 // component
 import Avatar from './Avatar'
 
+// styles
+import './OnlineUsers.css'
+
 export default function OnlineUsers() {
   const { error, documents } = useCollection('users')
 
@@ -13,8 +16,9 @@ export default function OnlineUsers() {
       {error && <div className='error'>{error}</div>}
       {documents && documents.map(user => (
         <div key={user.id} className='user-list-item'>
-            <span>{user.displayName}</span>
             <Avatar src={user.photoURL} />
+            <span>{user.displayName}</span>
+            {user.online && <span className="online-user"></span>}
         </div>
       ))}
     </div>
