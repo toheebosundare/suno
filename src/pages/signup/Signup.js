@@ -62,6 +62,7 @@ export default function Signup() {
       <label>
         <span>profile thumbnail:</span>
         <input type="file" required onChange={handleFileChange}/>
+        <p>create your own avatar on avatarmaker.com</p>
         {thumbnailError && <div className='error'>{thumbnailError}</div>}
       </label>
       {!isPending && <button className='btn'>Sign up</button>}
