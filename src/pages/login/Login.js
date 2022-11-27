@@ -19,7 +19,7 @@ export default function Login() {
     <form onSubmit={handleSubmit} className="auth-form">
       <h2>Enter email and Password</h2>
       <label>
-        <span>email:</span>
+        <span>Email:</span>
         <input
           required
           type="email" 
@@ -28,7 +28,7 @@ export default function Login() {
         />
       </label>
       <label>
-        <span>password:</span>
+        <span>Password:</span>
         <input 
           required
           type="password" 

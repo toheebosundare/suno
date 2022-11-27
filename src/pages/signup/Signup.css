@@ -1,4 +1,4 @@
-.auth-form {
+ .auth-form {
   max-width: 360px;
   margin: 60px auto;
   padding: 40px;
@@ -6,3 +6,15 @@
   box-shadow: 3px 3px 5px rgba(0,0,0,0.05);
   background: #fff;
 } 
+
+@media screen and (max-width:600px) {
+  .auth-form{
+    max-width: auto;
+  }
+
+  h2 {
+    display: none;
+  
+  }
+
+}
