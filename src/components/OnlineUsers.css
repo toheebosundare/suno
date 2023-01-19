@@ -7,7 +7,7 @@
   color: var(--heading-color);
 }
 .user-list h2 {
-  text-align: left;
+  text-align: right;
   margin-bottom: 40px;
   padding-bottom: 10px;
   border-bottom: 1px solid #eee;
@@ -15,12 +15,12 @@
 }
 .user-list .user-list-item {
   display: flex;
-  justify-content: flex-start;
+  justify-content: flex-end;
   align-items: center;
   margin: 20px auto;
 }
 .user-list .avatar {
-  margin-right: 10px;
+  margin-left: 10px;
   width: 40px;
   height: 40px;
 }
@@ -28,11 +28,10 @@
 /* online users */
 .user-list .online-user {
   display: inline-block;
-  margin-left: 10px;
+  margin-right: 10px;
   width: 12px;
   height: 12px;
   background: #0ebb50;
   border-radius: 50%;
   margin-top: 2px;
 }
-

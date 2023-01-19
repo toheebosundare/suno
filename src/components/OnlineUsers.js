@@ -1,6 +1,7 @@
 import React from 'react'
 import { useCollection } from '../hooks/useCollection'
 
+
 // components
 import Avatar from './Avatar'
 
@@ -10,6 +11,7 @@ import './OnlineUsers.css'
 export default function OnlineUsers() {
   const { isPending, error, documents } = useCollection('users')
 
+
   return (
     <div className="user-list">
       <h2>All Users</h2>
@@ -18,11 +20,12 @@ export default function OnlineUsers() {
       {documents && documents.map(user => (
         <div key={user.id} className="user-list-item">
           {isPending && <div>Loading users...</div>}
+          {user.online && <span className="online-user"></span>}
           <span>{user.displayName}</span>
           <Avatar src={user.photoURL} />
-          {user.online && <span className="online-user"></span>}
         </div>
       ))}
     </div>
   )
+
 }
